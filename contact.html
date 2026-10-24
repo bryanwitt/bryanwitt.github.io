@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Contact | Bryan Witt</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Bryan Witt">
+	<meta name="keywords" content="Bryan Witt, tech skills, ideas">
+	<meta name="description" content="How to reach out to Bryan Witt">
+	<link rel="stylesheet" href="style.css">
+	<script>
+		function validateForm() {
+			const email = document.getElementById('email').value;
+			const phone = document.getElementById('phone').value;
+
+			if (email === '' && phone === '') {
+				alert('Please provide at least one contact method: email or phone.');
+				return false;
+			}
+			return true;
+		}
+	</script>
+</head>
+
+<body>
+	<nav>
+		<img src="profile.png" alt="Bryan Witt">
+		<a href="index.html">
+			<div>Home</div>
+		</a>
+		<a href="bio.html">
+			<div>Bio</div>
+		</a>
+		<a href="resume.html">
+			<div>Resumé</div>
+		</a>
+		<a href="faith.html">
+			<div>Faith</div>
+		</a>
+		<a href="contact.html">
+			<div id="current-page">Contact</div>
+		</a>
+		<a href="blog.html">
+            <div>Blog</div>
+        </a>
+	</nav>
+	<main>
+		<header>
+			<h1>Contact Me</h1>
+		</header>
+		<p>Feel free to reach out to me directly at <a href="mailto:bryan@witt.id">bryan@witt.id</a> or fill out the contact form below.</p>
+		<form method="post" action="https://webdevbasics.net/scripts/demo.php" onsubmit="return validateForm()">
+			<fieldset>
+				<legend>Contact Information</legend>
+				<label for="formname">Name</label>
+				<input type="text" name="name" id="formname" required><br>
+
+				<label for="org">Organization</label>
+				<input type="text" name="org" id="org"><br>
+
+				<label for="email">Email</label>
+				<input type="email" name="email" id="email"><br>
+
+				<label for="phone">Phone&nbsp;Number</label>
+				<input type="tel" name="phone" id="phone">
+
+				<!-- <div id="required">*Required</div> -->
+			</fieldset>
+
+			<fieldset>
+				<legend>Message</legend>
+
+				Why are you reaching out?<br>
+				<input type="radio" name="interest" id="ra" value="tech"> I need your tech skills.<br>
+				<input type="radio" name="interest" id="rb" value="ideas"> I'm interested in your ideas.<br>
+				<input type="radio" name="interest" id="rc" value="other"> Other<br>
+
+				<textarea name="message" id="message" cols="47" rows="5">Type your message here.</textarea>
+			</fieldset>
+
+			<div id="buttons">
+				<input type="submit" value="Submit">
+				&nbsp;&nbsp;or&nbsp;&nbsp;
+				<input type="reset" value="Cancel">
+			</div>
+		</form>
+		<footer>
+			<div>&copy; 2025 Bryan Witt</div>
+			<div><a href="index.html">Home Page</a></div>
+		</footer>
+	</main>
+</body>
+
+</html>

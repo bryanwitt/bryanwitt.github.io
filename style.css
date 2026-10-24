@@ -1,0 +1,473 @@
+/* Global Settings */
+
+@font-face {
+	font-family: Kalam;
+	src: url(Kalam-Regular.ttf);
+	font-stretch: 100%;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: Kalam;
+	src: url(Kalam-Bold.ttf);
+	font-stretch: 100%;
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: Kalam;
+	src: url(Kalam-Light.ttf);
+	font-stretch: 100%;
+	font-weight: 100;
+}
+
+@font-face {
+	font-family: Candara;
+	src: url(Candara.ttf);
+	font-stretch: 100%;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: Candara;
+	src: url(Candara_Bold.ttf);
+	font-stretch: 100%;
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: Candara;
+	src: url(Candara_Italic.ttf);
+	font-stretch: 100%;
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: Candara;
+	src: url(Candara_Bold_Italic.ttf);
+	font-stretch: 100%;
+	font-weight: bold;
+	font-style: italic;
+}
+
+:root {
+	/* Global colors */
+	--c-one: #7A4D2E;
+	/* "Coffee" brown (dark brown) */
+	--c-two: #B19272;
+	/* "Lion" (light brown) */
+	--c-three: #4E6B8E;
+	/* "Lapiz Lazuli" (blue) */
+	--light: #FAFAFF;
+	/* "Ghost white" */
+	--dark: #0D160B;
+	/* "Night" */
+
+	/* Global fonts */
+	--font: Candara, sans-serif;
+	--accent: Kalam, cursive;
+
+	/* Global Numbers */
+	--nav-width: 150px;
+}
+
+body {
+	font-family: var(--font);
+	margin: 0;
+	padding: 0;
+	color: var(--dark);
+	background-color: var(--light);
+}
+
+header {
+	background-color: var(--c-three);
+	color: var(--light);
+	font-weight: normal;
+	font-size: 150%;
+}
+
+h1 {
+	font-size: 250%;
+	font-family: var(--accent);
+	text-align: center;
+	padding: 20px;
+	margin: 0;
+}
+
+nav div {
+	padding-top: 10px;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	padding-bottom: 10px;
+}
+
+nav a {
+	width: 100%;
+	color: var(--dark);
+	background-color: var(--c-two);
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	text-shadow: 1px 1px 8px;
+	transition: all .3s ease-out;
+}
+
+nav {
+	font-family: var(--accent);
+	width: 150px;
+	background-color: var(--c-two);
+	background-image: url(books.svg);
+	background-position: bottom 0px left 0px;
+	background-repeat: no-repeat;
+	background-size: 70%;
+	height: 100vh;
+	font-size: 25px;
+	position: fixed;
+	margin: 0;
+	float: right;
+	padding: 0;
+}
+
+header {
+	width: 100%;
+	max-height: 230px;
+	margin-top: 0;
+	font-family: var(--accent);
+}
+
+main {
+	margin: 0 0 0 150px;
+	padding: 0;
+	width: calc(100% - 150px);
+	color: var(--dark);
+	background-color: var(--light);
+}
+
+p {
+	padding: 10px;
+	padding-top: 0;
+}
+
+#current-page {
+	background-color: var(--c-one);
+	font-weight: bold;
+	color: var(--light);
+}
+
+nav img {
+	aspect-ratio: 1;
+	width: 130px;
+	margin: 10px;
+	border-radius: 100%;
+}
+
+nav a :hover {
+	background-color: var(--c-one);
+	color: var(--light);
+}
+
+.articlewrapper {
+	max-width: 700px;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 1px solid var(--c-two);
+}
+
+.articleheader {
+	padding: 20px;
+	margin: 0;
+	background-color: var(--c-two);
+}
+
+.articleheader h2 {
+	margin-top: 0;
+}
+
+.articlewrapper p {
+	padding: 0 20px 0 20px;
+}
+
+/* Home */
+#hero {
+	background-image:
+		linear-gradient(to right, rgba(13, 22, 11, 0.6), rgba(13, 22, 11, 0.2)),
+		/* Doesn't automatically change with theme colors */
+		url(hero.jpg);
+	background-size: 100%, cover;
+	background-attachment: scroll, fixed;
+	background-repeat: no-repeat, no-repeat;
+	background-position: left center, 70% 30%;
+	height: 100vh;
+}
+
+#notecard {
+	width: 200px;
+	height: 200px;
+	padding: 25px;
+	line-height: 100px;
+	font-size: 60px;
+	font-family: var(--accent);
+	font-weight: 100;
+	text-align: center;
+	position: absolute;
+	top: 40%;
+	left: 33.3%;
+	transform: translate(0, -145px);
+	color: var(--light);
+	border-top: 3px solid var(--light);
+	border-bottom: 3px solid var(--light);
+	background-color: hsla(0, 0%, 0%, 0.281);
+}
+
+#about {
+	background-color: var(--c-three);
+	color: var(--light);
+	padding: 20px;
+}
+
+.wrapper {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: stretch;
+	gap: 20px;
+}
+
+.flex-item {
+	max-width: 500px;
+	min-width: 350px;
+	flex-grow: 2;
+}
+
+#flex1 {
+	border: 1px solid var(--dark);
+	border-radius: 10px;
+	flex-grow: 1;
+}
+
+#about h1 {
+	text-align: center;
+	color: inherit;
+	background: inherit;
+}
+
+.aboutcontent {
+	background-color: var(--light);
+	color: var(--dark);
+	border-radius: 10px;
+	padding: 10px;
+	margin-top: 20px;
+}
+
+#top {
+	margin-top: 0;
+}
+
+.aboutcontent h2 {
+	margin: 0 0 20px 0;
+}
+
+#creds .wrapper {
+	justify-content: center;
+	padding: 10px;
+}
+
+#creds .wrapper div {
+	width: 200px;
+	height: 200px;
+	padding: 10px;
+	border: 1px solid var(--dark);
+}
+
+#creds p {
+	text-align: center;
+}
+
+footer a {
+	border: 1px solid var(--dark);
+	border-radius: 5px;
+	text-shadow: none;
+	padding: 5px;
+	box-shadow: 4px 4px 6px var(--dark);
+}
+
+footer a:hover {
+	background-color: var(--c-two);
+}
+
+footer a:active {
+	box-shadow: 2px 2px 3px var(--dark);
+}
+
+/* Faith */
+#core {
+	background-image: url(core.jpg);
+	background-position: center;
+	background-size: cover;
+	height: 500px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+}
+
+table {
+	width: 80%;
+	border-collapse: collapse;
+	margin: auto;
+}
+
+th,
+td {
+	border: 1px solid var(--dark);
+	padding: 8px;
+	text-align: left;
+}
+
+th {
+	background-color: var(--c-three);
+	color: var(--light);
+}
+
+#video {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: stretch;
+	padding: 20px;
+	margin: 20px;
+	gap: 20px;
+}
+
+#video div {
+	border: 1px solid var(--dark);
+	border-radius: 10px;
+}
+
+#video iframe {
+	aspect-ratio: 1.7777777778;
+	width: 750px;
+	border-radius: 10px;
+	margin: 10px;
+	max-width: calc(100vh - 190px);
+}
+
+#video2 {
+	aspect-ratio: 1.3333333333;
+}
+
+footer {
+	border-top: 1px solid var(--dark);
+	display: flex;
+	flex-flow: row nowrap;
+	padding: 20px;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+/* Contact */
+form {
+	width: 400px;
+	margin: auto;
+	margin-top: 20px;
+}
+
+label {
+	float: left;
+	clear: left;
+	display: block;
+	width: 100px;
+	padding-right: 10px;
+	margin-top: 10px;
+	text-align: right;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+	display: block;
+	margin-top: 10px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+	box-shadow: 3px 3px 8px var(--dark);
+}
+
+#buttons {
+	margin-top: 10px;
+	text-align: center;
+}
+
+legend {
+	font-family: var(--accent);
+	font-size: 130%;
+}
+
+textarea {
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+}
+
+#required {
+	font-size: 75%;
+	font-style: italic;
+	text-align: right;
+	margin-top: -0.75em;
+}
+
+/* Blog */
+article {
+	width: 80%;
+	margin: auto;
+}
+
+#article p {
+	margin: 0 0 15px 0;
+	padding: 0;
+}
+
+/* Resumé */
+#resume {
+	width: 100%;
+	height: 700px;
+	max-height: 100%;
+}
+
+/* Bio */
+#story {
+	background-image:
+		linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 85%, rgb(250, 250, 255) 100%),
+		url(skyline2.jpg);
+	background-size: 100%, auto 100%;
+	background-repeat: no-repeat, no-repeat;
+	background-position: bottom, bottom;
+	height: 60vw;
+}
+#storyheader {
+	background-color: rgb(0, 0, 0, 0);
+	color: var(--light);
+	text-shadow: 0 0 10px black;
+	font-size: 2.6em;
+}
+#interests {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: stretch;
+	gap: 20px;
+}
+#interests div {
+	border: 1px solid var(--dark);
+	padding: 10px;
+	border-radius: 10px;
+	max-width: 400px;
+}
+#interests div h3 {
+	margin-top: 0;
+	text-align: center;
+}

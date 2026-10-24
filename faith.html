@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Faith | Bryan Witt</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Bryan Witt">
+	<meta name="keywords" content="Bryan Witt, faith, christianity, Jesus, God">
+	<meta name="description" content="Information about the religious beliefs of Bryan Witt">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<nav>
+		<img src="profile.png" alt="Bryan Witt">
+		<a href="index.html">
+			<div>Home</div>
+		</a>
+		<a href="bio.html">
+			<div>Bio</div>
+		</a>
+		<a href="resume.html">
+			<div>Resumé</div>
+		</a>
+		<a href="faith.html">
+			<div id="current-page">Faith</div>
+		</a>
+		<a href="contact.html">
+			<div>Contact</div>
+		</a>
+		<a href="blog.html">
+			<div>Blog</div>
+		</a>
+	</nav>
+	<main>
+		<header>
+			<h1>Faith & Philosophy</h1>
+		</header>
+		<div id="core">
+			<canvas id="myCanvas"></canvas>
+			<script>
+				const canvas = document.getElementById('myCanvas');
+				const ctx = canvas.getContext('2d');
+
+				function resizeCanvas() {
+					canvas.width = window.innerWidth;
+					canvas.height = window.innerHeight;
+				}
+
+				window.addEventListener('resize', resizeCanvas);
+				resizeCanvas();
+
+				const circles = [];
+				const numCircles = 8;
+				const speed = 0.7; // pixels per frame
+
+				for (let i = 0; i < numCircles; i++) {
+					circles.push({
+						radius: 100 + i * 30,
+						angle: Math.random() * Math.PI * 2,
+						segment: Math.random() * 0.4 + 0.2,
+						direction: Math.random() < 0.5 ? 1 : -1
+					});
+				}
+
+				function draw() {
+					ctx.clearRect(0, 0, canvas.width, canvas.height);
+					const centerX = canvas.width / 2;
+					const centerY = canvas.height / 2;
+
+					// Draw the text
+					ctx.font = '30px Kalam';
+					ctx.textAlign = 'center';
+					ctx.textBaseline = 'middle';
+					ctx.fillStyle = '#0D160B';
+					ctx.fillText('Faith', centerX, centerY - 40);
+					ctx.fillText('at the', centerX, centerY);
+					ctx.fillText('CORE', centerX, centerY + 40);
+
+					// Draw the circles
+					circles.forEach((circle, index) => {
+						const circumference = 2 * Math.PI * circle.radius;
+						const angleIncrement = (speed / circumference) * 2 * Math.PI * circle.direction;
+
+						ctx.beginPath();
+						ctx.arc(centerX, centerY, circle.radius, circle.angle, circle.angle + Math.PI * 2 * circle.segment);
+						ctx.strokeStyle = '#B19272';
+						ctx.lineWidth = 30;
+						ctx.stroke();
+
+						ctx.beginPath();
+						ctx.arc(centerX, centerY, circle.radius, circle.angle + Math.PI * 2 * circle.segment, circle.angle + Math.PI * 2);
+						ctx.strokeStyle = '#FAFAFF';
+						ctx.lineWidth = 30;
+						ctx.stroke();
+
+						// Draw the outline between circles
+						if (index < circles.length - 1) {
+							ctx.beginPath();
+							ctx.arc(centerX, centerY, circle.radius + 15, 0, Math.PI * 2);
+							ctx.strokeStyle = '#7A4D2E';
+							ctx.lineWidth = 1;
+							ctx.stroke();
+						}
+
+						// Update the angle for constant movement speed
+						circle.angle += angleIncrement;
+					});
+
+					requestAnimationFrame(draw);
+				}
+
+				draw();
+			</script>
+		</div>
+		<p>My faith is at the core of everything I do. It forms my worldview, the way I look at the world and react to
+			it. Here is a summary of my core beliefs.</p>
+		<table>
+			<tr>
+				<th>Topic</th>
+				<th>Belief</th>
+				<th>Supporting Verses</th>
+			</tr>
+			<tr>
+				<td>God</td>
+				<td>There is one God in three persons: Father, Son, and Holy Spirit.</td>
+				<td>Matthew 28:19,<br>2 Corinthians 13:14</td>
+			</tr>
+			<tr>
+				<td>Jesus Christ</td>
+				<td>Jesus is the Son of God, fully divine and fully human, who died for our sins and rose again.</td>
+				<td>John 1:1,<br>John 1:14,<br>1 Corinthians 15:3-4</td>
+			</tr>
+			<tr>
+				<td>Salvation</td>
+				<td>Salvation is by grace through faith in Jesus Christ alone.</td>
+				<td>Ephesians 2:8-9,<br>John 3:16</td>
+			</tr>
+			<tr>
+				<td>Scripture</td>
+				<td>The Bible is the inspired, inerrant, and authoritative Word of God.</td>
+				<td>2 Timothy 3:16,<br>2 Peter 1:20-21</td>
+			</tr>
+			<tr>
+				<td>Church</td>
+				<td>The Church is the body of Christ, consisting of all believers.</td>
+				<td>1 Corinthians 12:12-13,<br>Ephesians 4:4-6</td>
+			</tr>
+		</table>
+		<p>To get a better idea of my beliefs, feel free to watch either of the short videos below.</p>
+		<div id="video">
+			<div>
+				<iframe id="video1" src="https://www.youtube.com/embed/TCSUKIhjevo" title="Are You a Good Person?"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</div>
+			<div>
+				<iframe id="video2" src="https://www.youtube.com/embed/b2bM6bigiFc"
+					title="Basic Message of the Bible"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</div>
+		</div>
+		<footer>
+			<div>&copy; 2025 Bryan Witt</div>
+			<div><a href="contact.html">Contact Me</a></div>
+			<script>
+				var refTagger = {
+					settings: {
+						bibleVersion: 'ESV'
+					}
+				};
+
+				(function (d, t) {
+					var n = d.querySelector('[nonce]');
+					refTagger.settings.nonce = n && (n.nonce || n.getAttribute('nonce'));
+					var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+					g.src = 'https://api.reftagger.com/v2/RefTagger.js';
+					g.nonce = refTagger.settings.nonce;
+					s.parentNode.insertBefore(g, s);
+				}(document, 'script'));
+			</script>
+		</footer>
+	</main>
+</body>
+
+</html>
